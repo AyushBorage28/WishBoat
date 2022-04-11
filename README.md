@@ -1,4 +1,6 @@
 # WishBoat
+To view code, go to master branch.
+
 Fully functional, responsive, cross- platform E-commerce website compatible to both PC's and mobile devices.
 The website is designed as such to work on all platforms with a very responsive UI.
 
@@ -39,5 +41,5 @@ Some screenshots on how it would look on iphone 12 pro:
 ![image](https://user-images.githubusercontent.com/99349720/162760841-bcc27b7d-6b80-4fe0-bf3d-47a2ec68d472.png)
 
 
-
+To view code, go to master branch.
 
