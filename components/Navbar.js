@@ -5,10 +5,12 @@ import {  AiFillCloseCircle, AiFillPlusCircle, AiFillMinusCircle, } from 'react-
 import { BsFillBagCheckFill, BsHandbag} from 'react-icons/bs';
 import {GoPerson} from 'react-icons/go';
 import { MdDeleteForever} from 'react-icons/md';
-
+import { useState } from 'react'
 
 import { useRef } from 'react';
-const Navbar = ({cart, addToCart, removeFromCart, clearCart, subTotal}) => {
+const Navbar = ({logout, cart, user, addToCart, removeFromCart, clearCart, subTotal}) => {
+  const [dropdown, setDropdown] = useState(false)
+  
   console.log(cart, addToCart, removeFromCart, clearCart, subTotal)
   const togglecart = () => {
     if (ref.current.classList.contains('translate-x-full')) {
@@ -38,10 +40,22 @@ const Navbar = ({cart, addToCart, removeFromCart, clearCart, subTotal}) => {
           </nav>
 
 
-          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-0 focus:outline-none hover:bg-gray-200 rounded mt-8 mx-0
+          <button className="inline-flex items-center border-0 py-1 px-0 focus:outline-none  rounded mt-8 mx-0
            md:mt-0 absolute right-4 text-xl md:text-2xl">
-            <Link href={'/login'}><a><GoPerson className='mx-4' /></a></Link>
+             <a onMouseOver={()=>{setDropdown(true)}} onMouseLeave={()=>{setDropdown(false)}}>
+            { dropdown && <div onMouseOver={()=>{setDropdown(true)}} onMouseLeave={()=>{setDropdown(false)}} className='absolute right-16 bg-blue-100 top-7 px-5 rounded-md w-32 cursor-pointer'>
+              <ul>
+                <Link href={'/myaccount'}><a><li className='py-1 text-sm hover:text-black font-semibold'>My Account</li></a></Link>
+                <Link href={'/orders'}><a><li className='py-1 text-sm hover:text-black font-semibold'>Orders</li></a></Link>
+                <li onClick={logout} className='py-1 text-sm hover:text-black font-semibold'>Logout</li>
+              </ul>
+             </div>}
+             {user.value && <GoPerson className='mx-4' />}
+             </a>
+            {!user.value &&<Link href={'/login'}><a><button className='bg-red-500 hover:bg-red-600 px-3 py-1 mr-2 rounded-md text-sm text-white'>Login</button> </a></Link>}
             < BsHandbag onClick={togglecart} />
+            
+            
 
             <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -49,6 +63,7 @@ const Navbar = ({cart, addToCart, removeFromCart, clearCart, subTotal}) => {
             
           </button>
         </div>
+        
         
       </header>
 

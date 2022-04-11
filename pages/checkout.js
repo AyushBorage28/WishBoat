@@ -91,7 +91,7 @@ const Checkout = ({ cart, subTotal, addToCart, removeFromCart }) => {
         
       </div>
       <div className='mx-2'>
-        <Link href={'/orders'}><button className="flex mr-2 text-white bg-red-500 border-0 py-2 px-2
+        <Link href={'/order'}><button className="flex mr-2 text-white bg-red-500 border-0 py-2 px-2
    focus:outline-none hover:bg-red-600 rounded text-lg">Place Order</button></Link>
       </div>
     </div>
