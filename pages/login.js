@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,6 +12,15 @@ const Login = () =>
 
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+
+  useEffect(() => {
+    if(localStorage.getItem('token')){
+      router.push('/')
+    }
+  
+    
+  }, [])
+  
 
 
   const handleChange = (e) => {
