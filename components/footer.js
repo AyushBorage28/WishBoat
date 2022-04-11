@@ -32,7 +32,7 @@ const Footer = () => {
               <li>
                 <a className="text-gray-600 hover:text-gray-800 cursor-pointer">About Us</a>
               </li>
-              <li> cursor-pointer
+              <li> 
                 <a className="text-gray-600 hover:text-gray-800 cursor-pointer">Careers</a>
               </li>
               <li>
