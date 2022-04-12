@@ -36,10 +36,12 @@ function MyApp({ Component, pageProps }) {
       setKey(Math.random())
     }
   }, [router.query])
+
   const logout =()=>{
     localStorage.removeItem('token')
     setUser({value:null})
     setKey(Math.random())
+    router.push('/')
    
   }
 
