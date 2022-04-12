@@ -42,7 +42,7 @@ const Navbar = ({logout, cart, user, addToCart, removeFromCart, clearCart, subTo
 
           <button className="inline-flex items-center border-0 py-1 px-0 focus:outline-none  rounded mt-8 mx-0
            md:mt-0 absolute right-4 text-xl md:text-2xl">
-             <a onMouseOver={()=>{setDropdown(true)}} onMouseLeave={()=>{setDropdown(false)}}>
+             <span onMouseOver={()=>{setDropdown(true)}} onMouseLeave={()=>{setDropdown(false)}}>
             { dropdown && <div onMouseOver={()=>{setDropdown(true)}} onMouseLeave={()=>{setDropdown(false)}} className='absolute right-16 bg-blue-100 top-7 px-5 rounded-md w-32 shadow-lg border cursor-pointer'>
               <ul>
                 <Link href={'/myaccount'}><a><li className='py-1 text-sm hover:text-black font-semibold'>My Account</li></a></Link>
@@ -51,7 +51,7 @@ const Navbar = ({logout, cart, user, addToCart, removeFromCart, clearCart, subTo
               </ul>
              </div>}
              {user.value && <GoPerson className='mx-4' />}
-             </a>
+             </span>
             {!user.value &&<Link href={'/login'}><a><button className='bg-red-500 hover:bg-red-600 px-3 py-1 mr-2 rounded-md text-sm text-white'>Login</button> </a></Link>}
             < BsHandbag onClick={togglecart} />
             
