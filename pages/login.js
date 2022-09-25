@@ -37,7 +37,7 @@ const Login = () =>
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = { email, password }
-    let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
+    let res = await fetch(`/api/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const Login = () =>
       progress: undefined,
       });
       setTimeout(() => {
-        router.push(process.env.NEXT_PUBLIC_HOST)
+        router.push("/")
       }, 1000);
       
     }
