@@ -27,9 +27,9 @@ const Navbar = ({logout, cart, user, addToCart, removeFromCart, clearCart, subTo
     <div className='sticky top-0 bg-white z-10'>
       <header className="text-gray-600 body-font shadow-md ">
         <div className=" mx-0 md:mx-7 flex flex-wrap p-0 flex-col md:flex-row items-center mb-0 py-0 shadow-xl ">
-          <a className="flex title-font font-medium  text-gray-900 mb-4 md:mb-0 ">
+          <div className="flex title-font font-medium  text-gray-900 mb-4 md:mb-0 ">
             <Link href={'/'}><a><Image className="top-0 mx-0  bg-white" src="/redlogo.png" alt="" width={100} height={100} /></a></Link>
-          </a>
+          </div>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-sm md:text-xl justify-center shadow-2xl ">
             <Link href={'/Tshirts'}><a className="mr-5 ml-0 hover:text-pink-600 font-bold">T-Shirts</a></Link>
             <Link href={'/hoodies'}><a className="mr-5 hover:text-orange-600 font-bold">Hoodies</a></Link>
@@ -40,7 +40,7 @@ const Navbar = ({logout, cart, user, addToCart, removeFromCart, clearCart, subTo
           </nav>
 
 
-          <button className="inline-flex items-center border-0 py-1 px-0 focus:outline-none  rounded mt-8 mx-0
+          <div className="inline-flex items-center border-0 py-1 px-0 focus:outline-none  rounded mt-8 mx-0
            md:mt-0 absolute right-4 text-xl md:text-2xl">
              <span onMouseOver={()=>{setDropdown(true)}} onMouseLeave={()=>{setDropdown(false)}}>
             { dropdown && <div onMouseOver={()=>{setDropdown(true)}} onMouseLeave={()=>{setDropdown(false)}} className='absolute right-16 bg-blue-100 top-7 px-5 rounded-md w-32 shadow-lg border cursor-pointer'>
@@ -61,7 +61,7 @@ const Navbar = ({logout, cart, user, addToCart, removeFromCart, clearCart, subTo
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
             
-          </button>
+          </div>
         </div>
         
         

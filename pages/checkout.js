@@ -2,12 +2,20 @@ import React from 'react'
 import { AiFillPlusCircle, AiFillMinusCircle, } from 'react-icons/ai';
 import { BsFillBagCheckFill } from 'react-icons/bs';
 import Link from 'next/link'
-
+import Head from 'next/head'
+import Script from 'next/script';
 
 
 const Checkout = ({ cart, subTotal, addToCart, removeFromCart }) => {
+  const initatePayment = ()=>{
+    
+  }
   return (
     <div className='container px-2 sm:m-auto '>
+      <Head>
+      <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+      </Head>
+      <Script type="application/javascript" crossorigin="anonymous" src={`${process.env.PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.PAYTM_MID}.js`} onload="onScriptLoad();"/>
       <h1 className='font-bold text-3xl my-8 text-center'>Checkout</h1>
       <h2 className='font-semibold text-xl'>1. Delivery Details</h2>
       <div className='mx-auto flex my-2'>
@@ -91,7 +99,7 @@ const Checkout = ({ cart, subTotal, addToCart, removeFromCart }) => {
         
       </div>
       <div className='mx-2'>
-        <Link href={'/order'}><button className="flex mr-2 text-white bg-red-500 border-0 py-2 px-2
+        <Link href={'/checkout'}><button onClick={initatePayment} className="flex mr-2 text-white bg-red-500 border-0 py-2 px-2
    focus:outline-none hover:bg-red-600 rounded text-lg">Place Order</button></Link>
       </div>
     </div>
